@@ -50,7 +50,6 @@ main {
 }
 
 .tasks__control button {
-    width: 10%;
     border-radius: 20px;
     margin-left: 20px;
     background-color: var(--primary-color);
@@ -64,7 +63,24 @@ main {
     font-size: 1.2em;
 }
 
+.tasks__show ul {
+    font-size: 1.5em;
+}
 
+.tasks__show ul li{
+    font-size: .9em;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.tasks__show .delete {
+    border-radius: 20px;
+    margin-left: 20px;
+    background-color: var(--primary-color);
+    color: var(--white);
+    font-size: .9em;
+}
 
 .container p{
     line-height: 1.6em;
