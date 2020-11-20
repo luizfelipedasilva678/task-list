@@ -6,7 +6,9 @@
 * {
     font-family: 'Montserrat', sans-serif;;
     box-sizing: border-box;
-    outline: 0;
+    outline: none;
+    box-shadow: none;
+    border: none;
 }
 
 h1{
@@ -27,7 +29,7 @@ main {
 
 .container {
     position: relative;
-    max-width: 640px;
+    width: 90vw;
     margin: 50px auto;
     display: flex;
     align-items: center;
@@ -39,11 +41,35 @@ main {
     box-shadow: 2px 6px 17px 0px rgba(0,0,0,0.75);
 }
 
+.tasks__control {
+    width: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.tasks__control button {
+    width: 10%;
+    border-radius: 20px;
+    margin-left: 20px;
+    background-color: var(--primary-color);
+    color: var(--white);
+    font-size: 1.2em;
+}
+
+.tasks__control input {
+    border: solid 1px var(--primary-color);
+    border-radius: 20px;
+    font-size: 1.2em;
+}
+
+
+
 .container p{
     line-height: 1.6em;
     margin-left: 30px;
 }
-
 
 form input, form label, form button {
     display: block;
