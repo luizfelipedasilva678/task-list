@@ -32,8 +32,8 @@
         target.remove();
     }
 
-    function save(tasks, targetId) {
-        localStorage.setItem(targetId, tasks);
+    function save(value, id) {
+        localStorage.setItem(id, value);
     }
 
     function remove(targetId) {
@@ -50,6 +50,7 @@
                 let txt = createText( localStorage.getItem(DOMElement.getAttribute('id')) );
                 insertLiInHtml(DOMElement, txt);
                 input.value = '';
+                save(taskValue, 'lastId');
             } else {
                 alert('Please enter a value');
             }
@@ -64,11 +65,14 @@
     window.addEventListener('load', function(){
         if(localStorage.length > 0) {
             Object.keys(localStorage).forEach(function(value){
-                let DOMElement = createElement('li');
-                addAttribute(DOMElement, 'id', value);
-                let txt = createText( localStorage.getItem(value) );
-                insertLiInHtml(DOMElement, txt);
+                if (value !== 'lastId'){
+                    let DOMElement = createElement('li');
+                    addAttribute(DOMElement, 'id', value);
+                    let txt = createText( localStorage.getItem(value) );
+                    insertLiInHtml(DOMElement, txt);
+                }
             });
+            taskValue = localStorage.getItem('lastId');
         }
     })
 })();

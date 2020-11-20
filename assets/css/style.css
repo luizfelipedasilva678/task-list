@@ -70,9 +70,26 @@ main {
 .tasks__show ul li{
     font-size: .9em;
     margin-bottom: 10px;
+    list-style: none;
     display: flex;
     justify-content: space-between;
 }
+
+@media (max-width: 640px) {
+    .tasks__control {
+        flex-direction: column;
+    }
+
+    .tasks__control button{
+        margin-top: 20px;
+        margin-left: 0;
+        width: 100%;
+    }
+
+    .tasks__control input{
+        width: 100%;
+    }
+}   
 
 .tasks__show .delete {
     border-radius: 20px;
